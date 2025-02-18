@@ -1,6 +1,9 @@
+import ServicesSection from "./components/ServicesSection";
 
 export default function Home() {
   return (
- <h1>Gello world</h1>
+<>
+<ServicesSection/>
+</>
   );
 }
