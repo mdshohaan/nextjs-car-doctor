@@ -11,7 +11,7 @@ export default async function ServiceDetailsPage({ params }) {
   const data = await serviceCollection.findOne({ _id: new ObjectId(p.id) });
   return (
     <div>
-           <section className="flex justify-center ">
+      <section className="flex justify-center ">
         <figure className="relative">
           <Image
             src={"/assets/images/checkout/checkout.png"}
@@ -28,8 +28,6 @@ export default async function ServiceDetailsPage({ params }) {
           </div>
         </figure>
       </section>
-      {/* <p>{JSON.stringify(p)}</p>
-      <p>{JSON.stringify(data)}</p> */}
       <section className="container mx-auto grid grid-cols-12 gap-4 mt-4">
         {/* Left Side */}
         <div className="col-span-9 space-y-4">
