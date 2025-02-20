@@ -1,16 +1,14 @@
-import dbConnect, { collectionNamesObj } from "@/lib/dbConnect";
-import { ObjectId } from "mongodb";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function ServiceDetailsPage({ params }) {
   const p = await params;
-  const serviceCollection = await dbConnect(
-    collectionNamesObj.servicesCollection
+  const res = await fetch(
+    `https://nextjs-car-doctor-kappa.vercel.app/api/service/${p.id}`
   );
-  const data = await serviceCollection.findOne({ _id: new ObjectId(p.id) });
+  const data = await res.json();
   return (
-    <div>
+    <div className="container mx-auto">
       <section className="flex justify-center ">
         <figure className="relative">
           <Image
